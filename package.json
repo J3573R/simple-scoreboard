@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/J3573R/simple-scoreboard/issues"
   },
-  "homepage": "https://github.com/J3573R/simple-scoreboard#readme"
+  "homepage": "https://github.com/J3573R/simple-scoreboard#readme",
+  "dependencies": {
+    "mongoose": "^5.0.9",
+    "node-restify-validation": "^1.1.1",
+    "restify": "^6.3.4",
+    "restify-errors": "^6.0.0"
+  }
 }
