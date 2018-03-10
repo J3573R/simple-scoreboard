@@ -1,0 +1,19 @@
+{
+  "name": "simple-scoreboard",
+  "version": "1.0.0",
+  "description": "Simple scoreboard backend server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J3573R/simple-scoreboard.git"
+  },
+  "author": "Tommi Hagelberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J3573R/simple-scoreboard/issues"
+  },
+  "homepage": "https://github.com/J3573R/simple-scoreboard#readme"
+}
