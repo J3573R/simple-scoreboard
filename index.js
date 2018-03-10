@@ -2,7 +2,7 @@ const server = require('./server');
 const connector = require('./database');
 const routes = require('./routes');
 
-const PORT = 80;
+const PORT = 3000;
 
 module.exports = server.listen(PORT, async() => {
     await connector();
