@@ -21,6 +21,18 @@ module.exports = () => {
         })
     });
 
+
+    const authorize = (req, res, next) => {
+        if(TOKEN) {
+            let { authorization } = req.headers;
+            if(TOKEN != authorization) {
+                return next(new errors.ForbiddenError('No valid access token.'));
+            }
+        }
+
+        return next();
+    };
+
     /**
      * 
      * @api {GET} /scores/:secret Get scores by secret
@@ -57,7 +69,9 @@ module.exports = () => {
                 secret: { isRequired: true }
             }
         }
-    }, (req, res, next) => {
+    }, 
+    authorize,
+    (req, res, next) => {
         let { secret } = req.params;
 
         scoreboard.find({
@@ -115,7 +129,9 @@ module.exports = () => {
                 score: { isRequired: true, isNumeric: true }
             }
         }
-    }, (req, res, next) => {
+    }, 
+    authorize,
+    (req, res, next) => {
         const {
             secret,
             name,
@@ -174,7 +190,9 @@ module.exports = () => {
                 id: { isRequired: true }
             }
         }
-    }, (req, res, next) => {
+    }, 
+    authorize,
+    (req, res, next) => {
         const { id } = req.params;
 
         scoreboard.findByIdAndRemove(id, (error, response) => {
